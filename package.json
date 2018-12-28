@@ -1,0 +1,33 @@
+{
+  "name": "todos",
+  "version": "1.0.0",
+  "description": "this app helps you get things done",
+  "main": "index.js",
+  "scripts": {
+    "test": "testIt",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nwaokoron/TODOs.git"
+  },
+  "keywords": [
+    "productivity",
+    "ToDo",
+    "JustDoIt"
+  ],
+  "author": "Zech",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nwaokoron/TODOs/issues"
+  },
+  "homepage": "https://github.com/nwaokoron/TODOs#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.1",
+    "npm-check-updates": "^2.15.0"
+  }
+}

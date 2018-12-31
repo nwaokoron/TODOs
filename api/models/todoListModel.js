@@ -14,7 +14,7 @@ var TaskSchema = new Schema({
   },
   due_date: {
     type: Date,
-    default: Date.now() + 86400000*2 // due 48 hrs from now
+    default: new Date(Date.now() + 172800000) 
   },
   priority_level: {
     type:[{

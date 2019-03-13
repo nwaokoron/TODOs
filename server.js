@@ -3,7 +3,7 @@ var express = require('express'),
   mongoose = require('mongoose'),
   bodyParser = require('body-parser'),
   Task = require('./api/models/todoListModel'), //created model loading here
-  port = process.env.PORT || 3000;
+  port = process.env.PORT || 3001; // note that react server is running on port 3000
   // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/Tododb');

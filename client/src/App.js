@@ -3,24 +3,51 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      tasks: []
+    }
+  }
+
+
+  componentDidMount() {
+    fetch('tasks')
+    .then(res => {
+      return res.json();
+    })
+    .then ( allTasks => {
+      console.log(JSON.stringify(allTasks));
+      this.setState({       // setting up the task
+        tasks: allTasks
+      });
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+         </header>
+         <h1> Tasks </h1>
+         <TaskList tasks={this.state.tasks}/>
       </div>
+    );
+  }
+}
+
+
+class TaskList extends Component {
+
+  render() {
+    return (
+      <ul>
+        {console.log(this)}
+        {this.props.tasks.map( task => (
+          <li key={task._id}> {task.name} </li>
+        ))}
+      </ul>
     );
   }
 }
